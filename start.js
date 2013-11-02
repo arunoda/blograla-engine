@@ -2,7 +2,7 @@ var express = require('express');
 var hubBubRoute = require('./lib/routes/hubBub');
 var MongoClient = require('mongodb').MongoClient;
 
-var MONGO_URL = process.env.MONGO_URL || 'mongodb://localhost/blograla';
+var MONGO_URL = process.env.MONGOLAB_URI || process.env.MONGO_URL || 'mongodb://localhost/blograla';
 MongoClient.connect(MONGO_URL, afterConnected);
 
 var app = express();
